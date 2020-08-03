@@ -34,7 +34,7 @@ class RegisterActivity : AppCompatActivity() {
     }
     private fun updateUi(user: FirebaseUser?){
         if(user!=null){
-            val intent= Intent(this, MainActivity::class.java)
+            val intent= Intent(this, com.example.socialnetwork.MainActivity::class.java)
             startActivity(intent)
         }
     }

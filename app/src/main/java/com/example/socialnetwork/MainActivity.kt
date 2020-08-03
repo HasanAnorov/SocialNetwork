@@ -1,4 +1,4 @@
-package com.example.socialnetwork.ui
+package com.example.socialnetwork
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
