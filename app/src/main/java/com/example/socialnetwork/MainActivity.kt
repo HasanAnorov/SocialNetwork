@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.socialnetwork.R
+import com.example.socialnetwork.ui.post.PostFragment
 import com.example.socialnetwork.ui.profile.ProfileFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -42,6 +43,11 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.itemProfile ->{
                     val fragment:Fragment=ProfileFragment()
+                    changeFragment(fragment,R.id.fragmentContainer)
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.itemAdd ->{
+                    val fragment:Fragment=PostFragment()
                     changeFragment(fragment,R.id.fragmentContainer)
                     return@setOnNavigationItemSelectedListener true
                 }
