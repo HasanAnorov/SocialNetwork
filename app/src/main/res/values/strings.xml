@@ -12,4 +12,6 @@
     <string name="action_register">Registration</string>
     <string name="write_your_post_here">Write your text here …</string>
     <string name="send">Send</string>
+    <string name="secondary_text">Secondary text</string>
+    <string name="this_is_title">This is title</string>
 </resources>

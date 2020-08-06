@@ -4,11 +4,12 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
 import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.example.socialnetwork.R
-import com.example.socialnetwork.ui.post.PostFragment
+import com.example.socialnetwork.ui.add.PostFragment
+import com.example.socialnetwork.ui.post.GetPostFragment
 import com.example.socialnetwork.ui.profile.ProfileFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -51,6 +52,11 @@ class MainActivity : AppCompatActivity() {
                     changeFragment(fragment,R.id.fragmentContainer)
                     return@setOnNavigationItemSelectedListener true
                 }
+                R.id.itemHome ->{
+                    val fragment=GetPostFragment()
+                    changeFragment(fragment,R.id.fragmentContainer)
+                    return@setOnNavigationItemSelectedListener true
+                }
                 else -> return@setOnNavigationItemSelectedListener false
             }
         }
@@ -58,6 +64,7 @@ class MainActivity : AppCompatActivity() {
     private fun changeFragment(fragment:Fragment,container:Int){
         supportFragmentManager.beginTransaction().replace(container,fragment).commit()
     }
+
 
 
     private fun Activity.hideSoftKeyboard() {
