@@ -5,6 +5,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <EditText
+        android:id="@+id/etTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:lines="2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/write_your_theme_here"
+        android:gravity="top|start"
+        android:background="@drawable/border"
+        android:padding="16dp"
+        android:inputType="textMultiLine"/>
+
+
+
+
+    <EditText
         android:id="@+id/etPost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -14,13 +35,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTheme"
+        app:layout_constraintBottom_toTopOf="@id/btnSend"
         android:layout_margin="16dp"
         android:hint="@string/write_your_post_here"
         android:gravity="start|top"
         android:padding="16dp"/>
-    
+
     <Button
         android:id="@+id/btnSend"
         android:layout_width="0dp"
