@@ -4,6 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 data class Post (
+    var id:String="",
     var username:String ="",
     var theme:String="",
     var like:Int=0,

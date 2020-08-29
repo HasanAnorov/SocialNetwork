@@ -16,7 +16,11 @@ import kotlinx.android.synthetic.main.item_post.view.*
 
 class PostAdapter:RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
+private var onItemClicked:(models:Post)->Unit = {}
 
+    fun setOnItemClickListener(onItemCLicked:(model:Post)->Unit){
+    this.onItemClicked=onItemCLicked
+    }
 
     inner class PostViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         private val mAuth= FirebaseAuth.getInstance()
@@ -28,6 +32,9 @@ class PostAdapter:RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
             }
             itemView.tvTitle.text=model.theme
             itemView.tvPostText.text=model.text
+            itemView.setOnClickListener {
+                onItemClicked.invoke(model)
+            }
         }
     }
 
@@ -39,7 +46,7 @@ class PostAdapter:RecyclerView.Adapter<PostAdapter.PostViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        val view =LayoutInflater.from(parent.context).inflate(R.layout.item_post,null,false)
+        val view =LayoutInflater.from(parent.context).inflate(R.layout.item_post,parent,false)
     return PostViewHolder(view)
     }
 
