@@ -1,4 +1,4 @@
-package com.example.socialnetwork.ui
+package com.example.socialnetwork.ui.sign
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
