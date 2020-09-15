@@ -9,15 +9,16 @@ import kotlinx.android.synthetic.main.item_comment.view.*
 
 class CommentListAdapter:RecyclerView.Adapter<CommentListAdapter.CommentViewHolder>() {
 
-    var models:List<String> = listOf()
+    var models:List<Map<String,String>> = listOf()
     set(value) {
         field=value
         notifyDataSetChanged()
     }
 
     inner class CommentViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
-        fun populateModel(comment:String){
-            itemView.tvComment.text=comment
+        fun populateModel(comment:Map<String,String>){
+            itemView.tvComment.text= comment["comment_text"]
+            itemView.tvUsername.text= "@${comment["username"]}"
         }
     }
 

@@ -15,7 +15,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
-        android:layout_height="0dp"/>
+        android:layout_height="0dp">
+
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/noComment"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textAllCaps="false"
+        android:textStyle="bold"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
