@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.comment.CommentActivity"/>
+        <activity android:name=".ui.comment.CommentActivity" />
+
         <activity android:name=".ui.sign.RegisterActivity" />
         <activity android:name=".ui.sign.LoginActivity">
 

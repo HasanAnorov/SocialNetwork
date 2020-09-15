@@ -15,4 +15,5 @@
     <string name="secondary_text">Secondary text</string>
     <string name="this_is_title">This is title</string>
     <string name="write_your_theme_here">Write your theme here</string>
+    <string name="no_comments_published_yet_be_first">No comments published yet, be first .</string>
 </resources>
