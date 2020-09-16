@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.socialnetwork.R
 import com.example.socialnetwork.post.Post
 import com.example.socialnetwork.ui.comment.CommentActivity
+import com.example.socialnetwork.ui.comment.adding.AddCommentActivity
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_get_post.*
 
@@ -24,6 +25,11 @@ class GetPostFragment:Fragment(R.layout.fragment_get_post) {
         adapter.setOnItemClickListener {
             var intent=Intent(requireContext(),CommentActivity::class.java)
             intent.putExtra("postId",it.id)
+            startActivity(intent)
+        }
+        adapter.setOnCommentClickedListener {
+            val  intent=Intent(requireContext(),AddCommentActivity::class.java)
+            intent.putExtra("PostId",it.id)
             startActivity(intent)
         }
         rvPost.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))

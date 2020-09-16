@@ -11,9 +11,10 @@
     <string name="login_failed">"Login failed"</string>
     <string name="action_register">Registration</string>
     <string name="write_your_post_here">Write your text here …</string>
-    <string name="send">Send</string>
     <string name="secondary_text">Secondary text</string>
     <string name="this_is_title">This is title</string>
     <string name="write_your_theme_here">Write your theme here</string>
     <string name="no_comments_published_yet_be_first">No comments published yet, be first .</string>
+    <string name="what_is_on_your_mind">What is on your mind ?</string>
+    <string name="send">Send</string>
 </resources>

@@ -10,8 +10,8 @@ import kotlinx.android.synthetic.main.activity_comment.*
 
 class CommentActivity : AppCompatActivity() {
 
-    var adapter=CommentListAdapter()
-    val db=FirebaseFirestore.getInstance()
+    private var adapter=CommentListAdapter()
+    private val db=FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

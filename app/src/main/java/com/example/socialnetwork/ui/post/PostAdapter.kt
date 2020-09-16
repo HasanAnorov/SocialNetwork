@@ -11,6 +11,7 @@ import com.example.socialnetwork.post.Post
 import com.example.socialnetwork.ui.profile.ProfileFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_add_comment.view.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import kotlinx.android.synthetic.main.item_post.view.*
 
@@ -20,6 +21,12 @@ private var onItemClicked:(models:Post)->Unit = {}
 
     fun setOnItemClickListener(onItemCLicked:(model:Post)->Unit){
     this.onItemClicked=onItemCLicked
+    }
+
+    var onCommentClicked:(model:Post)->Unit = {}
+
+    fun setOnCommentClickedListener(onCommentClicked: (model:Post)->Unit){
+        this.onCommentClicked=onCommentClicked
     }
 
     inner class PostViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
@@ -34,6 +41,9 @@ private var onItemClicked:(models:Post)->Unit = {}
             itemView.tvPostText.text=model.text
             itemView.setOnClickListener {
                 onItemClicked.invoke(model)
+            }
+            itemView.ivComment.setOnClickListener {
+                onCommentClicked.invoke(model)
             }
         }
     }
