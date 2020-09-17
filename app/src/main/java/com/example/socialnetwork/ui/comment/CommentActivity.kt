@@ -28,7 +28,7 @@ class CommentActivity : AppCompatActivity() {
     db.collection("posts").document(id).get()
         .addOnSuccessListener {
 if(it.exists()){
-    it.get("comment")?.let {comments->
+    it.get("comments")?.let {comments->
         adapter.models=comments as List<Map<String,String>>
     }
 }

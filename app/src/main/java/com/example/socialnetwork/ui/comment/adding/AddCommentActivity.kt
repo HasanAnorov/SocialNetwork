@@ -31,19 +31,19 @@ class AddCommentActivity : AppCompatActivity() {
 
                         var username=""
 
-                            db.collection("posts").document(mAuth.currentUser!!.uid).get().addOnSuccessListener {user->
+                            db.collection("users").document(mAuth.currentUser!!.uid).get().addOnSuccessListener {user->
                                 username= user.get("username").toString()
 
-                                post?.comments?.add(mapOf("username" to username, "comment_text" to etComment.text.toString() ))
+                                post?.comment?.add(mapOf("comment_text" to etComment.text.toString(), "username" to username  ))
                                 val newPost = mutableMapOf<String,Any?>()
                                 newPost["id"] = post?.id
-                                newPost["username"] = post?.username
                                 newPost["theme"] = post?.theme
+                                newPost["username"] = post?.username
+                                newPost["text"] = post?.text
                                 newPost["like"] = post?.like
                                 newPost["dislike"] = post?.dislike
-                                newPost["text"] = post?.text
                                 newPost["userId"] = post?.userId
-                                newPost["comments"] = post?.comments
+                                newPost["comments"] = post?.comment
 
                                 db.collection("posts").document(postId).update(newPost).addOnSuccessListener {
                                     Toast.makeText(this,"Your comment added",Toast.LENGTH_SHORT).show()

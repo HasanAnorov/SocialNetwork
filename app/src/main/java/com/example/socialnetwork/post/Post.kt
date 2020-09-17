@@ -11,7 +11,7 @@ data class Post (
     var dislike:Int=0,
     var text:String="",
     var userId :String="",
-    var comments:MutableList<Map<String,String>> = mutableListOf()
+    var comment:MutableList<Map<String,String>> = mutableListOf()
 ){
     private val mAuth= FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
